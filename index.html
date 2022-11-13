@@ -17,8 +17,8 @@
   <body>
     <div class="main">
       <div class="left__part">
-        <img class="left__part-img" src="./img/bg.jpg" alt="" />
-        <img class="main__logo" src="./img/logo.svg" alt="" />
+        <img class="left__part-img" src="./img/bg.jpg" alt="logo" />
+        <img class="main__logo" src="./img/logo.svg" alt="main_logo" />
       </div>
       <div class="right__part">
         <div class="right__block">
@@ -30,7 +30,11 @@
             <div class="buttons">
               <div class="registration__button facebook__button">
                 <div class="logo">
-                  <img class="logo__image" src="./img/facebook.svg" alt="" />
+                  <img
+                    class="logo__image"
+                    src="./img/facebook.svg"
+                    alt="facebook"
+                  />
                 </div>
                 <div class="text__link">
                   <a
@@ -44,7 +48,11 @@
 
               <div class="registration__button linkedin__button">
                 <div class="logo">
-                  <img class="logo__image" src="./img/linkedin.svg" alt="" />
+                  <img
+                    class="logo__image"
+                    src="./img/linkedin.svg"
+                    alt="linkedin"
+                  />
                 </div>
                 <div class="text__link">
                   <a
@@ -61,18 +69,22 @@
             </div>
             <div class="registration__email">
               <div class="registration__email-form">
-                <input
-                  class="registration__email-form-field"
-                  type="text"
-                  placeholder="Email"
-                />
+                <label>
+                  <input
+                    class="registration__email-form-field"
+                    type="text"
+                    placeholder="Email"
+                  />
+                </label>
               </div>
               <div class="registration__email-form">
-                <input
-                  class="registration__email-form-field"
-                  type="tel"
-                  placeholder="Phone"
-                />
+                <label>
+                  <input
+                    class="registration__email-form-field"
+                    type="tel"
+                    placeholder="Phone"
+                  />
+                </label>
               </div>
             </div>
           </div>
@@ -86,54 +98,30 @@
 
             <div class="radio__variants">
               <div class="radio">
-                <input
-                  class="custom-radio"
-                  type="radio"
-                  id="var-1"
-                  name="var"
-                  value="indivudual"
-                />
-                <label for="var-1">
-                  <p class="radio__text">Individual</p>
+                <label class="custom-radio">
+                  <input type="radio" name="var" value="individual" />
+                  <span class="radio__text">Individual</span>
                 </label>
               </div>
 
               <div class="radio">
-                <input
-                  class="custom-radio"
-                  type="radio"
-                  id="var-2"
-                  name="var"
-                  value="business"
-                />
-                <label for="var-2">
-                  <p class="radio__text">Business</p>
+                <label class="custom-radio">
+                  <input type="radio" name="var" value="business" />
+                  <span class="radio__text">Business</span>
                 </label>
               </div>
 
               <div class="radio">
-                <input
-                  class="custom-radio"
-                  type="radio"
-                  id="var-3"
-                  name="var"
-                  value="ira"
-                />
-                <label for="var-3">
-                  <p class="radio__text">IRA</p>
+                <label class="custom-radio">
+                  <input type="radio" name="var" value="ira" />
+                  <span class="radio__text">IRA</span>
                 </label>
               </div>
 
               <div class="radio">
-                <input
-                  class="custom-radio"
-                  type="radio"
-                  id="var-4"
-                  name="var"
-                  value="trust"
-                />
-                <label for="var-4">
-                  <p class="radio__text">Trust</p>
+                <label class="custom-radio">
+                  <input type="radio" name="var" value="trust" />
+                  <span class="radio__text">Trust</span>
                 </label>
               </div>
               <div class="radio__variants__hint">
@@ -145,32 +133,29 @@
             </div>
             <div class="agree">
               <div class="checkbox">
-                <input
-                  class="custom-checkbox"
-                  type="checkbox"
-                  id="agree"
-                  name="agree"
-                  value="agree"
-                />
-                <label for="agree">
-                  <p class="agree__text">
-                    I agree to the terms and receiving notifications from iintoo
-                    <a class="agree__link" aria-label="View full terms" href="#"
-                      >View full terms</a
+                <div class="checkbox">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" name="color-1" value="indigo" />
+                    <span
+                      ><p class="agree__text">
+                        I agree to the terms and receiving notifications from
+                        iintoo
+                        <a
+                          class="agree__link"
+                          aria-label="View full terms"
+                          href="#"
+                          >View full terms</a
+                        >
+                      </p></span
                     >
-                  </p>
-                </label>
+                  </label>
+                </div>
               </div>
             </div>
             <div class="create__account__button">
-              <div class="create__button">
-                <a
-                  class="create__button__link"
-                  aria-label="Create account"
-                  href="#"
-                  >Create account</a
-                >
-              </div>
+              <button class="create__button__link" aria-label="Create account">
+                <p class="create__button__text">Create Account</p>
+              </button>
             </div>
           </div>
         </div>

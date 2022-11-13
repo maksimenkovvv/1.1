@@ -11,7 +11,8 @@ p,
 h3,
 h2,
 h1,
-a {
+a,
+span {
   font-family: "Barlow", sans-serif;
   color: #2a4a5c;
 }
@@ -167,21 +168,21 @@ a {
 }
 
 /* для элемента input c type="radio" */
-.custom-radio {
+.custom-radio > input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
 /* для элемента label связанного с .custom-radio */
-.custom-radio + label {
+.custom-radio > span {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
 
 /* создание в label псевдоэлемента  before со следующими стилями */
-.custom-radio + label::before {
+.custom-radio > span::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -193,40 +194,43 @@ a {
   margin-right: 0.5em;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 50% 50%;
+  background-size: 75% 75%;
 }
 
 /* стили при наведении курсора на радио */
-.custom-radio:not(:disabled):not(:checked) + label:hover::before {
+.custom-radio > input:not(:disabled):not(:checked) + span:hover::before {
   border-color: #b3d7ff;
 }
 
 /* стили для активной радиокнопки (при нажатии на неё) */
-.custom-radio:not(:disabled):active + label::before {
+.custom-radio > input:not(:disabled):active + span::before {
   background-color: #b3d7ff;
   border-color: #b3d7ff;
 }
 
-/* стили для радиокнопки, находящейся в фокусе */
-.custom-radio:focus + label::before {
-  box-shadow: 10px rgba(0, 123, 255, 0.25);
-}
-
 /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
-.custom-radio:focus:not(:checked) + label::before {
+.custom-radio > input:focus:not(:checked) + span::before {
   border-color: #80bdff;
 }
 
 /* стили для радиокнопки, находящейся в состоянии checked */
-.custom-radio:checked + label::before {
+.custom-radio > input:checked + span::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 
 /* стили для радиокнопки, находящейся в состоянии disabled */
-.custom-radio:disabled + label::before {
+.custom-radio > input:disabled + span::before {
   background-color: #e9ecef;
+}
+
+body {
+  padding: 20px 50px;
+}
+
+.radio {
+  margin-bottom: 0.2em;
 }
 
 .radio__text {
@@ -243,27 +247,26 @@ a {
   color: grey;
 }
 
+.checkbox {
+  margin-bottom: 0.2em;
+}
+
 /* для элемента input c type="checkbox" */
-.custom-checkbox {
+.custom-checkbox > input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
 /* для элемента label, связанного с .custom-checkbox */
-.custom-checkbox + label {
+.custom-checkbox > span {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
 
-/* стили при наведении курсора на checkbox */
-.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
-  border-color: #b3d7ff;
-}
-
 /* создание в label псевдоэлемента before со следующими стилями */
-.custom-checkbox + label::before {
+.custom-checkbox > span::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -278,10 +281,36 @@ a {
   background-size: 50% 50%;
 }
 
-.custom-checkbox:checked + label::before {
+/* стили при наведении курсора на checkbox */
+.custom-checkbox > input:not(:disabled):not(:checked) + span:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox > input:not(:disabled):active + span::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox > input:focus:not(:checked) + span::before {
+  border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox > input:checked + span::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox > input:disabled + span::before {
+  background-color: #e9ecef;
+}
+
+body {
+  padding: 20px 50px;
 }
 
 .agree {
@@ -300,22 +329,24 @@ a {
   padding-top: 60px;
 }
 
-.create__button {
+.create__button__link {
   width: 280px;
   height: 45px;
   border-radius: 5px;
   line-height: 43px;
   text-align: center;
+  border: none;
   background-color: #0b81ef;
 }
 
-.create__button__link {
+.create__button__text {
+  font-size: 15px;
   text-decoration: none;
   color: #eff6ff;
   font-weight: bold;
 }
 
-.create__button:hover {
+.create__button__link:hover {
   cursor: pointer;
   transition: background-color 0.5s ease;
   background-color: #0b81efce;
