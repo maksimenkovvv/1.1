@@ -225,10 +225,6 @@ span {
   background-color: #e9ecef;
 }
 
-body {
-  padding: 20px 50px;
-}
-
 .radio {
   margin-bottom: 0.2em;
 }
@@ -309,10 +305,6 @@ body {
   background-color: #e9ecef;
 }
 
-body {
-  padding: 20px 50px;
-}
-
 .agree {
   margin-top: 70px;
 }
@@ -350,4 +342,37 @@ body {
   cursor: pointer;
   transition: background-color 0.5s ease;
   background-color: #0b81efce;
+}
+
+@media (max-width: 1367px) {
+  .main {
+    height: 768px;
+    width: 1366px;
+  }
+
+  .left__part-img {
+    height: 768px;
+    width: 620px;
+  }
+
+  .right__part {
+    height: 768px;
+  }
+
+  .registration {
+    margin-top: 30px;
+  }
+
+  .registration__alternative,
+  .registration__email {
+    padding-top: 20px;
+  }
+
+  .agree {
+    margin-top: 40px;
+  }
+
+  .create__account__button {
+    padding-top: 45px;
+  }
 }
